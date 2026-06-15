@@ -2,7 +2,7 @@
 
 A pricing-analytics case study on a **5-property, ~102,000 sq ft warehouse portfolio**
 in Lucknow (4 multi-floor units in Transport Nagar, 1 single-floor unit in Banthra).
-The analysis quantifies the portfolio's pricing power, decomposes its ~30% revenue
+The analysis quantifies the portfolio's pricing power, decomposes its ~50% revenue
 growth, and surfaces concrete optimisation levers — using SQL for the metric layer
 and pandas/matplotlib for analysis and visuals.
 
@@ -25,7 +25,6 @@ portfolio still leaves money on the table.
 ## Key findings
 
 | Metric | Result |
-|---|---|
 | Monthly rent roll | ₹16.20 L (₹194 L/yr) |
 | Revenue growth 2023→2026 | **+50% gross potential rent** (repricing + tenant-mix upgrade) |
 | Premium captured vs non-compliant stock | **~₹46 L/yr** |
@@ -68,7 +67,7 @@ sqlite3 portfolio.db
 .read analysis.sql
 ```
 
-## Data provenance (honest note)
+## Data provenance
 
 **Real:** unit count, locations, floor areas, current floor rates, **2023 baseline
 rates**, lease terms and escalations, tenant business types, full occupancy, and the
