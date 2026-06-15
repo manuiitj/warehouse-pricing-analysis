@@ -1,6 +1,6 @@
 """
 Warehouse Portfolio Pricing & Yield Analysis
-=============================================
+
 A 5-property warehouse portfolio in Lucknow (4 in Transport Nagar, 1 in Banthra).
 The portfolio's edge is COMPLIANCE-DRIVEN PRICING POWER: every unit is LDA-approved
 with sanctioned parking and clean title, so it commands a premium over cheaper but
@@ -159,8 +159,7 @@ def recommendations(df):
     print(f"  • Diversify Banthra single-asset exposure (~33%) or lock its renewal.")
     print()
 
-
-# ----------------------------- charts -----------------------------
+# charts 
 
 def chart_premium(df):
     g = df.groupby("floor", sort=False).agg(
