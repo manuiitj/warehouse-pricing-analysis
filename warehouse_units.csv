@@ -1,0 +1,14 @@
+unit_id,property,locality,floor,area_sqft,business_type,tenant_name,occupancy_status,rate_psf_current,rate_psf_2023,competitor_rate_psf,lda_compliant,legal_parking,lease_type,lease_term_months,annual_escalation_pct,lease_start,months_vacant_36mo,enquiries_6mo
+TPN1-B,TPN-1,Transport Nagar,Basement,6000,Pharma Cold Storage,MediCold Storage,Occupied,15,9,11,Y,Y,11-month,11,4,2024-03-01,2,6
+TPN1-G,TPN-1,Transport Nagar,Ground,6000,Pharma Cold Storage,MediCold Storage,Occupied,20,15,15,Y,Y,11-month,11,4,2024-03-01,1,9
+TPN1-F,TPN-1,Transport Nagar,First,6000,Refurbished Electronics,ReNew Electronics,Occupied,10,6,8,Y,Y,11-month,11,4,2025-01-01,4,4
+TPN2-B,TPN-2,Transport Nagar,Basement,6000,Compressed Wood Doors,DuraDoor Mfg,Occupied,15,9,11,Y,Y,11-month,11,4,2023-08-01,3,6
+TPN2-G,TPN-2,Transport Nagar,Ground,6000,FMCG Food Trader,FreshLine Foods,Occupied,20,15,15,Y,Y,11-month,11,4,2024-06-01,0,9
+TPN2-F,TPN-2,Transport Nagar,First,6000,Furniture,PepKart,Occupied,10,6,8,Y,Y,11-month,11,4,2024-11-01,2,4
+TPN3-B,TPN-3,Transport Nagar,Basement,6000,Compressed Wood Doors,DuraDoor Mfg,Occupied,15,9,11,Y,Y,11-month,11,4,2023-08-01,2,6
+TPN3-G,TPN-3,Transport Nagar,Ground,6000,Refurbished Electronics,ReNew Electronics,Occupied,20,15,15,Y,Y,11-month,11,4,2024-09-01,1,9
+TPN3-F,TPN-3,Transport Nagar,First,6000,Packaging Materials,PackWell Traders,Occupied,10,6,8,Y,Y,11-month,11,4,2025-02-01,5,4
+TPN4-B,TPN-4,Transport Nagar,Basement,6000,Building Hardware,BuildMart Hardware,Occupied,15,9,11,Y,Y,11-month,11,4,2024-01-01,3,6
+TPN4-G,TPN-4,Transport Nagar,Ground,6000,FMCG Food Trader,FreshLine Foods,Occupied,20,15,15,Y,Y,11-month,11,4,2024-04-01,0,9
+TPN4-F,TPN-4,Transport Nagar,First,6000,Furniture,PepKart,Occupied,10,6,8,Y,Y,11-month,11,4,2024-12-01,4,4
+BAN1,Banthra,Banthra,Single,30000,Logistics / 3PL,Representative Tenant,Occupied,18,12,14,Y,Y,5-year,60,5,2023-05-01,0,5
