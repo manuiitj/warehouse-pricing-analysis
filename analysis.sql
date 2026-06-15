@@ -1,13 +1,10 @@
--- ============================================================
--- Warehouse Portfolio Pricing & Yield Analysis  —  SQL layer
--- SQLite-compatible.
---
--- Load:  sqlite3 portfolio.db
---        .mode csv
---        .import --skip 1 data/warehouse_units.csv warehouse_units
--- ============================================================
+Warehouse Portfolio Pricing & Yield Analysis  —  SQL layer
+SQLite-compatible.
+Load:  sqlite3 portfolio.db
+.mode csv
+.import --skip 1 data/warehouse_units.csv warehouse_units
 
--- 1. PORTFOLIO SNAPSHOT ---------------------------------------
+1. PORTFOLIO SNAPSHOT 
 SELECT
     COUNT(*)                              AS leasable_units,
     SUM(area_sqft)                        AS total_sqft,
@@ -16,7 +13,7 @@ SELECT
     ROUND(SUM(area_sqft*rate_psf_current)*1.0/SUM(area_sqft),2) AS blended_rate_psf
 FROM warehouse_units;
 
--- 2. INCOME GROWTH 2023 -> NOW (the ~30% story) ---------------
+2. INCOME GROWTH 2023 -> NOW (the ~50% story) 
 SELECT
     SUM(area_sqft*rate_psf_2023)          AS monthly_rent_2023,
     SUM(area_sqft*rate_psf_current)       AS monthly_rent_current,
@@ -24,9 +21,9 @@ SELECT
           *100.0/SUM(area_sqft*rate_psf_2023),1) AS growth_pct
 FROM warehouse_units;
 
--- 3. COMPLIANCE PRICING POWER (premium over competitors) ------
---    Every unit is LDA-compliant; competitors discount on paper
---    but carry cash deals / no parking / encroachment.
+3. COMPLIANCE PRICING POWER (premium over competitors)
+Every unit is LDA-compliant; competitors discount on paper
+but carry cash deals / no parking / encroachment.
 SELECT
     floor,
     ROUND(AVG(rate_psf_current),1)        AS our_rate_psf,
@@ -37,12 +34,12 @@ FROM warehouse_units
 GROUP BY floor
 ORDER BY premium_psf DESC;
 
--- 3b. TOTAL ANNUAL PREMIUM CAPTURED ---------------------------
+3b. TOTAL ANNUAL PREMIUM CAPTURED
 SELECT SUM((rate_psf_current-competitor_rate_psf)*area_sqft)*12 AS annual_premium_inr
 FROM warehouse_units;
 
--- 4. YIELD & SOFT-SPOT BY FLOOR -------------------------------
---    First floors: lowest rate, lowest demand, highest vacancy.
+4. YIELD & SOFT-SPOT BY FLOOR 
+First floors: lowest rate, lowest demand, highest vacancy.
 SELECT
     floor,
     ROUND(AVG(rate_psf_current),1)        AS avg_rate_psf,
@@ -52,7 +49,7 @@ FROM warehouse_units
 GROUP BY floor
 ORDER BY avg_rate_psf DESC;
 
--- 5. TENANT-MIX / CONCENTRATION -------------------------------
+5. TENANT-MIX / CONCENTRATION
 SELECT
     business_type,
     COUNT(*)                              AS units,
@@ -63,8 +60,8 @@ FROM warehouse_units
 GROUP BY business_type
 ORDER BY monthly_rent_inr DESC;
 
--- 6. COST OF VACANCY (trailing 36 months) ---------------------
---    Churn from 11-month TP Nagar leases, not weak demand.
+6. COST OF VACANCY (trailing 36 months)
+Churn from 11-month TP Nagar leases, not weak demand.
 SELECT
     locality,
     SUM(months_vacant_36mo)               AS vacant_months,
